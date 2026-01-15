@@ -31,9 +31,9 @@ export const DEFAULT_SPECIALS: DailySpecial[] = [
   {
     id: '4',
     day: 'Thursday',
-    title: 'Burger Day Thursdays & Happy Hours 10% & Free Pool all day!',
+    title: 'Burger Day Thursdays',
     description: 'Your choice of Chicken, Beer Battered Fish, Pork Belly or Coasters Beef Burger, all served with Golden Fries & Onion Rings. 1 Burger for $19 or 2 for $35. Available from 12pm.  Enjoy Happy Hours with 10% selected beverages between 4.30pm & 6.30pm. Our Pool Table is also Free all day and night on Thursdays!',
-    price: 'Free Pool Table all day!',
+    price: '$19 or $35!',
     imageUrl: './ribs.jpg',
     highlightColor: '#f97316'
   },
