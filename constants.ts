@@ -7,7 +7,7 @@ export const DEFAULT_SPECIALS: DailySpecial[] = [
     title: 'Steak Day Monday\'s',
     description: 'Start your week off with a 200g Succulent Rump Steak, cooked to your liking, served with golden fries and a green garden salad.',
     price: '$20',
-    imageUrl: './images/Coasters-Tavern-Standard-Crops-200624-6-1290x570.jpg',
+    imageUrl: 'images/steak-night.jpg',
     highlightColor: '#f59e0b'
   },
   {
@@ -16,7 +16,7 @@ export const DEFAULT_SPECIALS: DailySpecial[] = [
     title: 'Chase the Ace',
     description: 'Purchase a beverage between 3.30pm and 5.30pm and your in the draw. Drawn @ 5.30pm',
     price: '5.30pm',
-    imageUrl: './images/Coasters-Tavern-Standard-121124-16-1290x570.jpg',
+    imageUrl: 'images/platter.jpg',
     highlightColor: '#ef4444'
   },
   {
@@ -25,7 +25,7 @@ export const DEFAULT_SPECIALS: DailySpecial[] = [
     title: 'Quiz Night',
     description: 'Starting back on the 21st January 2026, $190 in prizes up for grabs. Bookings Essential.',
     price: 'FREE ENTRY',
-    imageUrl: './imges/ct-bg-image.jpg',
+    imageUrl: 'images/schnitzel.jpg',
     highlightColor: '#eab308'
   },
   {
@@ -34,7 +34,7 @@ export const DEFAULT_SPECIALS: DailySpecial[] = [
     title: 'Burger Day Thursdays',
     description: 'Your choice of Chicken, Beer Battered Fish, Pork Belly or Coasters Beef Burger, all served with Golden Fries & Onion Rings. 1 Burger for $19 or 2 for $35. Available from 12pm.  Enjoy Happy Hours with 10% selected beverages between 4.30pm & 6.30pm. Our Pool Table is also Free all day and night on Thursdays!',
     price: '$19 or $35!',
-    imageUrl: './ribs.jpg',
+    imageUrl: 'images/burger-night.jpg',
     highlightColor: '#f97316'
   },
   {
@@ -43,7 +43,7 @@ export const DEFAULT_SPECIALS: DailySpecial[] = [
     title: 'Happy Hours 10%',
     description: 'Enjoy 10% discount on selected beverages between 4.30pm & 6.30pm.',
     price: '10% Off!',
-    imageUrl: './fish-chips.jpg',
+    imageUrl: 'images/fish-chips.jpg',
     highlightColor: '#3b82f6'
   },
   {
@@ -52,7 +52,7 @@ export const DEFAULT_SPECIALS: DailySpecial[] = [
     title: 'Chase the Ace',
     description: 'Tickets from 3.30pm, Draw @ 6.30pm.',
     price: '$35',
-    imageUrl: './platter.jpg',
+    imageUrl: 'images/platter.jpg',
     highlightColor: '#06b6d4'
   },
   {
@@ -61,7 +61,7 @@ export const DEFAULT_SPECIALS: DailySpecial[] = [
     title: 'Two Course Sunday Roast',
     description: 'Traditional roast of the day with roasted vegetables, seasonal greens and rich gravy, with an Ice Cream Sundae to finish. ',
     price: '$28',
-    imageUrl: './roast.jpg',
+    imageUrl: 'images/roast.jpg',
     highlightColor: '#84cc16'
   },
   {
@@ -70,7 +70,7 @@ export const DEFAULT_SPECIALS: DailySpecial[] = [
     title: 'Free Pool Thursdays',
     description: 'Our Pool Table is Free all day and night on Thursdays! Grab a cue and challenge your mates.',
     price: 'FREE',
-    imageUrl: './burger-night.jpg',
+    imageUrl: 'images/burger-night.jpg',
     highlightColor: '#f97316'
   },
   {
@@ -79,7 +79,7 @@ export const DEFAULT_SPECIALS: DailySpecial[] = [
     title: 'Loyalty App',
     description: 'Join our loyalty program! Earn points with every purchase and redeem them for food and drinks. Ask our staff how to join.',
     price: 'Join Today',
-    imageUrl: './platter.jpg',
+    imageUrl: 'images/platter.jpg',
     highlightColor: '#8b5cf6'
   }
 ];
