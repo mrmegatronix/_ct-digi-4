@@ -14,7 +14,13 @@ const images = [
 ];
 
 const downloadImage = (url, filename) => {
-  const filePath = path.join(__dirname, filename);
+  // Create images directory if it doesn't exist
+  const imgDir = path.join(__dirname, 'images');
+  if (!fs.existsSync(imgDir)){
+      fs.mkdirSync(imgDir);
+  }
+
+  const filePath = path.join(imgDir, filename);
   const file = fs.createWriteStream(filePath);
 
   https.get(url, (response) => {
@@ -27,10 +33,10 @@ const downloadImage = (url, filename) => {
 
     file.on('finish', () => {
       file.close();
-      console.log(`Downloaded: ${filename}`);
+      console.log(`Downloaded: images/${filename}`);
     });
   }).on('error', (err) => {
-    fs.unlink(filePath, () => {}); // Delete the file async. (But we don't check the result)
+    fs.unlink(filePath, () => {}); // Delete the file async.
     console.error(`Error downloading ${filename}: ${err.message}`);
   });
 };

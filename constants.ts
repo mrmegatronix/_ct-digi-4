@@ -6,7 +6,7 @@ export const DEFAULT_SPECIALS: DailySpecial[] = [
     day: 'Monday',
     title: 'Steak Day Monday\'s',
     description: 'Start your week off with a 200g Succulent Rump Steak, cooked to your liking, served with golden fries and a green garden salad.',
-    price: '$24',
+    price: '$20',
     imageUrl: './images/Coasters-Tavern-Standard-Crops-200624-6-1290x570.jpg',
     highlightColor: '#f59e0b'
   },
@@ -14,8 +14,8 @@ export const DEFAULT_SPECIALS: DailySpecial[] = [
     id: '2',
     day: 'Tuesday',
     title: 'Chase the Ace',
-    description: 'Purchase a beverage between 3.30pm and 5.30pm and your in the draw.',
-    price: 'Main Draw @ 5.30pm',
+    description: 'Purchase a beverage between 3.30pm and 5.30pm and your in the draw. SDrawn @ 5.30pm',
+    price: '5.30pm',
     imageUrl: './images/Coasters-Tavern-Standard-121124-16-1290x570.jpg',
     highlightColor: '#ef4444'
   },
@@ -32,7 +32,7 @@ export const DEFAULT_SPECIALS: DailySpecial[] = [
     id: '4',
     day: 'Thursday',
     title: 'Burger Day Thursdays & Happy Hours 10% & Free Pool all day!',
-    description: 'Your choice of Chicken, Beer Battered Fish, Pork Belly or Coasters Beef Burger, All served with Golden Fries & Onion Rings. 1 Burger for $19 or 2 for $35. Available from 12pm.  Enjoy Happy Hours with 10% selected beverages between 4.30pm & 6.30pm. Our Pool Table is also Free all day and night on Thursdays!',
+    description: 'Your choice of Chicken, Beer Battered Fish, Pork Belly or Coasters Beef Burger, all served with Golden Fries & Onion Rings. 1 Burger for $19 or 2 for $35. Available from 12pm.  Enjoy Happy Hours with 10% selected beverages between 4.30pm & 6.30pm. Our Pool Table is also Free all day and night on Thursdays!',
     price: 'Free Pool Table all day!',
     imageUrl: './ribs.jpg',
     highlightColor: '#f97316'
