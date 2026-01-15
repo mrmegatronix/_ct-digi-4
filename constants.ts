@@ -14,7 +14,7 @@ export const DEFAULT_SPECIALS: DailySpecial[] = [
     id: '2',
     day: 'Tuesday',
     title: 'Chase the Ace',
-    description: 'Purchase a beverage between 3.30pm and 5.30pm and your in the draw. SDrawn @ 5.30pm',
+    description: 'Purchase a beverage between 3.30pm and 5.30pm and your in the draw. Drawn @ 5.30pm',
     price: '5.30pm',
     imageUrl: './images/Coasters-Tavern-Standard-121124-16-1290x570.jpg',
     highlightColor: '#ef4444'
@@ -63,5 +63,23 @@ export const DEFAULT_SPECIALS: DailySpecial[] = [
     price: '$28',
     imageUrl: './roast.jpg',
     highlightColor: '#84cc16'
+  },
+  {
+    id: '9',
+    day: 'Thursday',
+    title: 'Free Pool Thursdays',
+    description: 'Our Pool Table is Free all day and night on Thursdays! Grab a cue and challenge your mates.',
+    price: 'FREE',
+    imageUrl: './burger-night.jpg',
+    highlightColor: '#f97316'
+  },
+  {
+    id: '10',
+    day: 'Membership',
+    title: 'Loyalty App',
+    description: 'Join our loyalty program! Earn points with every purchase and redeem them for food and drinks. Ask our staff how to join.',
+    price: 'Join Today',
+    imageUrl: './platter.jpg',
+    highlightColor: '#8b5cf6'
   }
 ];
