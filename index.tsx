@@ -1,2 +1,1 @@
-// This file is no longer used in the HTML-only version.
-// See index.html for the complete implementation.
+// File removed - Application is consolidated in index.html
