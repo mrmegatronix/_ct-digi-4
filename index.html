@@ -153,7 +153,7 @@
         <!-- Slides injected here -->
     </div>
 
-    <!-- Admin Button -->
+    <!-- Admin Button (Moved to top-right) -->
     <button id="admin-btn" class="fixed top-4 right-4 z-50 p-3 bg-zinc-800 rounded-full text-zinc-400 hover:text-white hover:bg-zinc-700 transition shadow-lg cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.09a2 2 0 0 1-1-1.74v-.47a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
     </button>
@@ -240,16 +240,72 @@
 
         // --- DATA ---
         const LOGO_URL = "https://www.coasterstavern.co.nz/wp-content/uploads/2021/07/Coasters-Logo-Web.png";
-        const STORAGE_KEY = 'coasters_specials_v1';
+        const STORAGE_KEY = 'coasters_specials_v3';
         
         const DEFAULT_SPECIALS = [
-            { id: '1', day: 'Monday', title: "Steak Day Monday's", description: 'Start your week off with a 200g Succulent Rump Steak, cooked to your liking, served with golden fries and a green garden salad.', price: '$24', imageUrl: 'https://coasterstavern.co.nz/wp-content/uploads/2024/06/Coasters-Tavern-Standard-Crops-200624-6-1290x570.jpg', highlightColor: '#f59e0b' },
-            { id: '2', day: 'Tuesday', title: 'Chase the Ace', description: "Purchase a beverage between 3.30pm and 5.30pm and your in the draw.", price: 'Draw @ 5:30pm', imageUrl: 'https://coasterstavern.co.nz/wp-content/uploads/2024/11/Coasters-Tavern-Standard-121124-16-1290x570.jpg', highlightColor: '#ef4444' },
-            { id: '3', day: 'Wednesday', title: 'Quiz Night', description: 'Starting back on the 21st January 2026, $190 in prizes up for grabs. Bookings Essential.', price: '$20', imageUrl: 'https://www.coasterstavern.co.nz/wp-content/uploads/2022/02/schnitzel.jpg', highlightColor: '#eab308' },
-            { id: '4', day: 'Thursday', title: 'Burger Day Thursdays & Happy Hours', description: 'Your choice of Chicken, Beer Battered Fish, Pork Belly or Coasters Beef. All served with Golden Fries & Onion Rings. 1 Burger for $19 or 2 for $35. Available from 12pm. Free Pool all day!', price: 'Free Pool!', imageUrl: 'https://www.coasterstavern.co.nz/wp-content/uploads/2022/02/ribs.jpg', highlightColor: '#f97316' },
-            { id: '5', day: 'Friday', title: 'Happy Hours 10%', description: 'Enjoy 10% discount on selected beverages between 4.30pm & 6.30pm.', price: '10% Off!', imageUrl: 'https://www.coasterstavern.co.nz/wp-content/uploads/2022/02/fish-chips.jpg', highlightColor: '#3b82f6' },
-            { id: '6', day: 'Saturday', title: 'Chase the Ace', description: 'Tickets from 3.30pm. A bountiful selection of calamari, prawns, fish bites, and mussels. Perfect for sharing.', price: '$35', imageUrl: 'https://www.coasterstavern.co.nz/wp-content/uploads/2022/02/platter.jpg', highlightColor: '#06b6d4' },
-            { id: '7', day: 'Sunday', title: 'Two Course Sunday Roast', description: 'Traditional roast of the day with roasted vegetables, seasonal greens and rich gravy, with an Ice Cream Sundae to finish.', price: '$28', imageUrl: 'https://www.coasterstavern.co.nz/wp-content/uploads/2022/02/roast.jpg', highlightColor: '#84cc16' }
+            {
+                id: '1',
+                day: 'Monday',
+                title: 'Steak Day Monday\'s',
+                description: 'Start your week off with a 200g Succulent Rump Steak, cooked to your liking, served with golden fries and a green garden salad.',
+                price: '$24',
+                imageUrl: './images/Coasters-Tavern-Standard-Crops-200624-6-1290x570.jpg',
+                highlightColor: '#f59e0b'
+            },
+            {
+                id: '2',
+                day: 'Tuesday',
+                title: 'Chase the Ace',
+                description: 'Purchase a beverage between 3.30pm and 5.30pm and your in the draw.',
+                price: 'Main Draw @ 5.30pm',
+                imageUrl: './images/Coasters-Tavern-Standard-121124-16-1290x570.jpg',
+                highlightColor: '#ef4444'
+            },
+            {
+                id: '3',
+                day: 'Wednesday',
+                title: 'Quiz Night',
+                description: 'Starting back on the 21st January 2026, $190 in prizes up for grabs. Bookings Essential.',
+                price: 'FREE ENTRY',
+                imageUrl: './images/ct-bg-image.jpg',
+                highlightColor: '#eab308'
+            },
+            {
+                id: '4',
+                day: 'Thursday',
+                title: 'Burger Day Thursdays & Happy Hours 10% & Free Pool all day!',
+                description: 'Your choice of Chicken, Beer Battered Fish, Pork Belly or Coasters Beef Burger, All served with Golden Fries & Onion Rings. 1 Burger for $19 or 2 for $35. Available from 12pm.  Enjoy Happy Hours with 10% selected beverages between 4.30pm & 6.30pm. Our Pool Table is also Free all day and night on Thursdays!',
+                price: 'Free Pool Table all day!',
+                imageUrl: './ribs.jpg',
+                highlightColor: '#f97316'
+            },
+            {
+                id: '5',
+                day: 'Friday',
+                title: 'Happy Hours 10%',
+                description: 'Enjoy 10% discount on selected beverages between 4.30pm & 6.30pm.',
+                price: '10% Off!',
+                imageUrl: './fish-chips.jpg',
+                highlightColor: '#3b82f6'
+            },
+            {
+                id: '6',
+                day: 'Saturday',
+                title: 'Chase the Ace',
+                description: 'Tickets from 3.30pm, Draw @ 6.30pm.',
+                price: '$35',
+                imageUrl: './platter.jpg',
+                highlightColor: '#06b6d4'
+            },
+            {
+                id: '7',
+                day: 'Sunday',
+                title: 'Two Course Sunday Roast',
+                description: 'Traditional roast of the day with roasted vegetables, seasonal greens and rich gravy, with an Ice Cream Sundae to finish. ',
+                price: '$28',
+                imageUrl: './roast.jpg',
+                highlightColor: '#84cc16'
+            }
         ];
 
         let specialsData = [];
@@ -423,10 +479,13 @@
                     <p class="text-responsive-desc text-zinc-100 max-w-[80vw] mb-[5vh] font-light drop-shadow-lg">
                         ${data.description}
                     </p>
-                    <div class="relative px-[4vw] py-[1vh] bg-black/80 border border-white/20 rounded-2xl backdrop-blur-md">
-                        <span class="text-responsive-price font-bold text-white tracking-tighter block">
-                            ${data.price}
-                        </span>
+                    <div class="relative group">
+                         <div class="absolute -inset-1 blur opacity-40 rounded-2xl" style="background-color: ${data.highlightColor}"></div>
+                         <div class="relative px-[4vw] py-[1vh] bg-black/80 border border-white/20 rounded-2xl backdrop-blur-md">
+                            <span class="text-responsive-price font-bold text-white tracking-tighter block">
+                                ${data.price}
+                            </span>
+                         </div>
                     </div>
                 </div>
             </div>`;
@@ -455,23 +514,7 @@
         function renderForecast(data, idx) {
             const daily = data.daily;
             let gridHtml = '';
-            for(let i = 7; i < 7; i++) {
-                gridHtml += `
-                    <div class="forecast-item">
-                        <span class="text-[2.5vh] text-zinc-400 font-bold uppercase mb-[1vh]">${getDayName(daily.time[i])}</span>
-                        <div class="w-[8vh] h-[8vh] mb-[1vh]">
-                            ${getWeatherIcon(daily.weather_code[i])}
-                        </div>
-                        <div class="flex flex-col items-center">
-                             <span class="text-[5vh] font-bold text-white leading-none">${Math.round(daily.temperature_2m_max[i])}&deg;</span>
-                             <span class="text-[3vh] font-medium text-zinc-500">${Math.round(daily.temperature_2m_min[i])}&deg;</span>
-                        </div>
-                    </div>
-                `;
-            }
-            // Fix loop to actually run
-             gridHtml = '';
-             for(let i = 0; i < 7; i++) {
+            for(let i = 0; i < 7; i++) {
                 gridHtml += `
                     <div class="forecast-item">
                         <span class="text-[2.5vh] text-zinc-400 font-bold uppercase mb-[1vh]">${getDayName(daily.time[i])}</span>

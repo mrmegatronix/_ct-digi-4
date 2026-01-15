@@ -7,7 +7,7 @@ export const DEFAULT_SPECIALS: DailySpecial[] = [
     title: 'Steak Day Monday\'s',
     description: 'Start your week off with a 200g Succulent Rump Steak, cooked to your liking, served with golden fries and a green garden salad.',
     price: '$24',
-    imageUrl: 'https://coasterstavern.co.nz/wp-content/uploads/2024/06/Coasters-Tavern-Standard-Crops-200624-6-1290x570.jpg',
+    imageUrl: './images/Coasters-Tavern-Standard-Crops-200624-6-1290x570.jpg',
     highlightColor: '#f59e0b'
   },
   {
@@ -16,7 +16,7 @@ export const DEFAULT_SPECIALS: DailySpecial[] = [
     title: 'Chase the Ace',
     description: 'Purchase a beverage between 3.30pm and 5.30pm and your in the draw.',
     price: 'Main Draw @ 5.30pm',
-    imageUrl: 'https://coasterstavern.co.nz/wp-content/uploads/2024/11/Coasters-Tavern-Standard-121124-16-1290x570.jpg',
+    imageUrl: './images/Coasters-Tavern-Standard-121124-16-1290x570.jpg',
     highlightColor: '#ef4444'
   },
   {
@@ -24,15 +24,15 @@ export const DEFAULT_SPECIALS: DailySpecial[] = [
     day: 'Wednesday',
     title: 'Quiz Night',
     description: 'Starting back on the 21st January 2026, $190 in prizes up for grabs. Bookings Essential.',
-    price: '$20',
-    imageUrl: './schnitzel.jpg',
+    price: 'FREE ENTRY',
+    imageUrl: './imges/ct-bg-image.jpg',
     highlightColor: '#eab308'
   },
   {
     id: '4',
     day: 'Thursday',
     title: 'Burger Day Thursdays & Happy Hours 10% & Free Pool all day!',
-    description: 'Your choice of Chicken, Beer Battered Fish, Pork Belly or Coasters Beef.  All served with Golden Fries & Onion Rings. 1 Burger for $19 or 2 for $35. Available from 12pm.  Enjoy Happy Hours with 10% selected beverages between 4.30pm & 6.30pm. Our Pool Table is also Free all day and night on Thursdays!',
+    description: 'Your choice of Chicken, Beer Battered Fish, Pork Belly or Coasters Beef Burger, All served with Golden Fries & Onion Rings. 1 Burger for $19 or 2 for $35. Available from 12pm.  Enjoy Happy Hours with 10% selected beverages between 4.30pm & 6.30pm. Our Pool Table is also Free all day and night on Thursdays!',
     price: 'Free Pool Table all day!',
     imageUrl: './ribs.jpg',
     highlightColor: '#f97316'
