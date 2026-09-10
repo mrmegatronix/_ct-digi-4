@@ -158,7 +158,8 @@
         import { GoogleGenAI, Type } from "@google/genai";
 
         const STORAGE_KEY = 'coasters_display_v6';
-        const SLIDE_DURATION = 15000;
+        let slideDuration = 15000;
+        let isLocked = false;
         
         // Ensure paths use images/ prefix for all backgrounds
         const INITIAL_SPECIALS = [
@@ -200,7 +201,7 @@
             `).join('');
             
             html += `<div class="absolute bottom-0 left-0 w-full h-2 bg-white/10 z-50 overflow-hidden">
-                <div id="pb" class="h-full bg-amber-500 animate-progress" style="animation-duration: ${SLIDE_DURATION}ms"></div>
+                <div id="pb" class="h-full bg-amber-500 animate-progress" style="animation-duration: ${slideDuration}ms"></div>
             </div>`;
             
             container.innerHTML = html;
@@ -208,7 +209,7 @@
             // Re-bind the animation end event
             const pb = document.getElementById('pb');
             pb.onanimationend = () => {
-                if (!isPaused) {
+                if (!isPaused && !isLocked) {
                     currentIndex = (currentIndex + 1) % specials.length;
                     render();
                 }
@@ -294,10 +295,105 @@
             };
         };
 
-        // Initialize on load
-        window.addEventListener('load', () => {
-            render();
-            initAdmin();
+        // Slideshow Keyboard Navigation
+        function showKeyboardHud(text) {
+            let hud = document.getElementById('keyboard-hud-toast');
+            if (!hud) {
+                hud = document.createElement('div');
+                hud.id = 'keyboard-hud-toast';
+                hud.style.cssText = 'position:fixed; bottom:2.5rem; right:2.5rem; z-index:999999; background:rgba(0,0,0,0.85); color:#fbbf24; border:1px solid rgba(251,191,36,0.5); padding:0.6rem 1.4rem; border-radius:9999px; font-family:sans-serif; font-size:1.1rem; font-weight:700; pointer-events:none; box-shadow:0 10px 30px rgba(0,0,0,0.7); backdrop-filter:blur(10px); transition:opacity 0.25s ease, transform 0.25s ease; opacity:0; transform:translateY(10px);';
+                document.body.appendChild(hud);
+            }
+            hud.innerText = text;
+            hud.style.opacity = '1';
+            hud.style.transform = 'translateY(0)';
+            clearTimeout(hud._t);
+            hud._t = setTimeout(() => {
+                hud.style.opacity = '0';
+                hud.style.transform = 'translateY(10px)';
+            }, 2000);
+        }
+
+        window.addEventListener('keydown', (e) => {
+            const target = e.target;
+            if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT' || target.isContentEditable)) {
+                return;
+            }
+
+            switch (e.key) {
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    currentIndex = (currentIndex - 1 + specials.length) % specials.length;
+                    render();
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    currentIndex = (currentIndex + 1) % specials.length;
+                    render();
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    currentIndex = 0;
+                    render();
+                    showKeyboardHud('⏮ Slide 1');
+                    break;
+                case 'ArrowDown':
+                    e.preventDefault();
+                    if (window.parent && window.parent !== window) {
+                        window.parent.postMessage({ type: 'SKIP_MODULE' }, '*');
+                    } else {
+                        currentIndex = (currentIndex + 1) % specials.length;
+                        render();
+                    }
+                    break;
+                case ' ':
+                case 'Space':
+                    e.preventDefault();
+                    isPaused = !isPaused;
+                    const pb = document.getElementById('pb');
+                    if (pb) pb.style.animationPlayState = isPaused || isLocked ? 'paused' : 'running';
+                    showKeyboardHud(isPaused ? '⏸ Paused' : '▶ Resumed');
+                    break;
+                case 'a':
+                case 'A':
+                    e.preventDefault();
+                    document.getElementById('admin-btn')?.click();
+                    break;
+                case 'r':
+                case 'R':
+                    e.preventDefault();
+                    window.open('index.html', '_blank');
+                    break;
+                case '0':
+                    e.preventDefault();
+                    isLocked = !isLocked;
+                    const pBar = document.getElementById('pb');
+                    if (isLocked) {
+                        if (pBar) pBar.style.animationPlayState = 'paused';
+                        showKeyboardHud('🔒 SLIDE LOCKED (0 to unlock)');
+                    } else {
+                        if (pBar) pBar.style.animationPlayState = isPaused ? 'paused' : 'running';
+                        showKeyboardHud('🔓 SLIDE UNLOCKED');
+                    }
+                    break;
+                default:
+                    if (e.key >= '1' && e.key <= '9') {
+                        e.preventDefault();
+                        const secs = parseInt(e.key, 10) * 10;
+                        slideDuration = secs * 1000;
+                        render();
+                        showKeyboardHud(`⏱ Duration: ${secs}s`);
+                    }
+                    break;
+            }
+        });
+
+        window.addEventListener('message', (e) => {
+            if (!e.data) return;
+            if (e.data.type === 'GOTO_FIRST') {
+                currentIndex = 0;
+                render();
+            }
         });
     </script>
 </body>
